@@ -1,11 +1,18 @@
 package com.zelo.entity;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "medicamentos")
 public class Medicamento {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String nome;
     private String dosagem;
     private String formato;
@@ -15,6 +22,9 @@ public class Medicamento {
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private boolean ativo;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     public Medicamento() {
