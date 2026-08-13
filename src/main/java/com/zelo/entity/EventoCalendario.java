@@ -1,15 +1,25 @@
 package com.zelo.entity;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
+@Table(name = "eventoscalendario")
 public class EventoCalendario {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String titulo;
     private String descricao;
     private LocalDateTime dataHora;
     private String tipo;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     public EventoCalendario() {
