@@ -1,14 +1,23 @@
 package com.zelo.entity;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
+@Table(name = "registrosmedicacao")
 public class RegistroMedicacao {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private LocalDateTime dataHoraAgendada;
     private LocalDateTime dataHoraAcao;
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "medicamento_id")
     private Medicamento medicamento;
 
     public RegistroMedicacao() {
