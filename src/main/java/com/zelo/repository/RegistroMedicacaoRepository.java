@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface RegistroMedicacaoRepository extends JpaRepository<RegistroMedicacao, Long> {
-    List<RegistroMedicacao> findByMedicacaoUsuarioIdOrderByDataHoraAgendadaDesc(Long usuarioId);
+    List<RegistroMedicacao> findByMedicamentoUsuarioIdOrderByDataHoraAgendadaDesc(Long usuarioId);
 }
