@@ -1,4 +1,7 @@
 package com.zelo.repository;
 
-public class UsuarioRepository {
+import com.zelo.entity.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 }
