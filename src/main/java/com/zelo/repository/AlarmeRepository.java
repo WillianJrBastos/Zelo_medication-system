@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AlarmeRepository extends JpaRepository<Alarme, Long> {
     List<Alarme> findByMedicamentoUsuarioId(Long usuarioId);
+    List<Alarme> findByMedicamentoId(Long medicamentoId);
 }
